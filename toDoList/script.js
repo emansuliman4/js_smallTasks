@@ -25,6 +25,19 @@ window.addEventListener('DOMContentLoaded', function () {
     });
 
     taskTable.appendChild(row);
+
+    const checkCell = document.createElement('td');
+    const checkButton = document.createElement('button');
+    checkButton.textContent = '✓';
+    checkButton.classList.add('check-btn');
+
+    checkButton.addEventListener('click', function () {
+        this.parentElement.parentElement.style.textDecoration = 'line-through';
+    });
+
+    checkCell.appendChild(checkButton);
+    row.appendChild(checkCell);
+
   }
 
   function updateLocalStorage() {
